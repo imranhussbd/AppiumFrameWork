@@ -1,7 +1,6 @@
 package practice;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.By;
@@ -33,7 +32,8 @@ public class AppiumServerTest2{
 	        builder.usingDriverExecutable(new File("path_to_node"));
 	        // Tell builder where Appium is installed. Or set this path in an environment variable named APPIUM_PATH
 	        builder.withAppiumJS(new File("path_to_appium"));
-	
+	       
+           
 
 	        service = AppiumDriverLocalService.buildService(builder);
 	        service.start();
@@ -47,6 +47,7 @@ public class AppiumServerTest2{
 			//App Activity, App package
 			capabilities.setCapability("appPackage", "com.google.android.calculator");
 			capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
+			
 	
 
 			 driver = new AndroidDriver(service.getUrl(),  capabilities);
